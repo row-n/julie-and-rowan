@@ -1,0 +1,15 @@
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.gradient {
+  animation: 5s shine 5s linear infinite;
+  background: linear-gradient(135deg, rgba(246,224,164,1) 0%,rgba(222,196,137,1) 40%,rgba(246,224,164,0.15) 75%,rgba(222,196,137,0.66) 90%,rgba(246,224,164,1) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

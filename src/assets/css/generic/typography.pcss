@@ -1,0 +1,106 @@
+/* Headings */
+/* -------- */
+
+h1,
+h2 {
+  color: var(--header-color);
+  font-family: var(--header-font-family);
+  letter-spacing: var(--header-letter-spacing);
+  line-height: var(--header-lineheight);
+  margin-bottom: var(--header-margin-bottom);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--header-color);
+  font-family: var(--body-font-family);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--header-x-light-font-weight);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--header-x-light-font-weight);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--header-x-light-font-weight);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+  font-weight: var(--header-light-font-weight);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+  font-weight: var(--header-light-font-weight);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+  font-weight: var(--header-light-font-weight);
+}
+
+/* Additional sizes */
+/* ---------------- */
+
+.x-small,
+%x-small {
+  font-size: var(--x-small-font-size);
+}
+
+.small,
+%small {
+  font-size: var(--small-font-size);
+}
+
+.large,
+%large {
+  font-size: var(--large-font-size);
+}
+
+.x-large,
+%x-large {
+  font-size: var(--x-large-font-size);
+}
+
+/* Subscripts & Superscripts */
+/* ------------------------- */
+
+sub,
+sup {
+  font-size: var(--x-small-font-size);
+}
+
+sub {
+  bottom: -.3em;
+}
+
+sup {
+  top: -.6em;
+}
+
+/* Links */
+/* ----- */
+
+a {
+  color: var(--anchor-color);
+  outline: none;
+  text-decoration: var(--anchor-text-decoration);
+  transition: color var(--global-duration ease);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: var(--anchor-color-hover);
+    outline: inherit;
+    text-decoration: var(--anchor-text-decoration-hover);
+  }
+}

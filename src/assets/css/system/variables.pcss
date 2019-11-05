@@ -1,0 +1,180 @@
+:root {
+
+  /* Colours */
+  /* ------- */
+
+  /* Grayscale */
+  --white: #fff;
+  --black-10: #e6e6e6;
+  --black-20: #ccc;
+  --black-30: #b3b3b3;
+  --black-40: #999;
+  --black-50: #808080;
+  --black-60: #666;
+  --black-70: #4d4d4d;
+  --black-80: #333;
+  --black-90: #1a1a1a;
+  --black: #000;
+
+  --n-white: gray(100);
+  --n-black-10: gray(90);
+  --n-black-20: gray(80);
+  --n-black-30: gray(70);
+  --n-black-40: gray(60);
+  --n-black-50: gray(50);
+  --n-black-60: gray(40);
+  --n-black-70: gray(30);
+  --n-black-80: gray(20);
+  --n-black-90: gray(10);
+  --n-black: gray(0);
+
+  /* Global */
+  /* ------ */
+
+  --global-font-size: 100%;
+  --global-lineheight: 1.5;
+  --global-weight-normal: normal;
+  --global-weight-bold: bold;
+  --global-duration: .4s;
+  --body-background: var(--white);
+  --body-font-colour: var(--black-80);
+  --body-font-family: 'Playfair Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --body-font-size: var(--global-font-size);
+  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+  /* Base Typography */
+  /* --------------- */
+
+  --header-font-family: 'Brilliant Signature', 'Playfair Display SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --sub-header-font-family: 'Playfair Display SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --header-x-light-font-weight: 200;
+  --header-light-font-weight: 300;
+  --header-font-style: normal;
+  --font-family-monospace: var(--font-family-monospace);
+  --header-color: var(--black-60);
+  --header-lineheight: 1.4;
+  --header-letter-spacing: .1em;
+  --header-margin-bottom: .5rem;
+  --h1-font-size: 1.602em;
+  --h2-font-size: 1.424em;
+  --h3-font-size: 1.266em;
+  --h4-font-size: 1.125em;
+  --h5-font-size: 1em;
+  --h6-font-size: .889em;
+  --x-small-font-size: 75%;
+  --small-font-size: 87.5%;
+  --large-font-size: 112.5%;
+  --x-large-font-size: 125%;
+  --paragraph-lineheight: 1.6;
+  --paragraph-margin-bottom: 1rem;
+  --anchor-color: blue;
+  --anchor-color-hover: blue;
+  --anchor-text-decoration: underline;
+  --anchor-text-decoration-hover: none;
+  --hr-width: 100%;
+  --hr-border: .0625em solid var(--black-50);
+  --hr-margin: 1.25rem auto;
+  --list-lineheight: var(--paragraph-lineheight);
+  --list-margin-bottom: var(--paragraph-margin-bottom);
+  --list-style-type: disc;
+  --list-style-position: outside;
+  --list-side-margin: 1.25rem;
+  --list-nested-side-margin: 1.25rem;
+
+  /* Media Queries */
+  /* ------------- */
+
+  /* Extra small screen / phone */
+  --screen-xs: 30em; /* 480px */
+
+  /* Small screen / tablet */
+  --screen-sm: 48em; /* 768px */
+
+  /* Medium screen / desktop */
+  --screen-md: 62em; /* 992px */
+
+  /* Large screen / wide desktop */
+  --screen-lg: 75em; /* 1200px */
+
+  /* So media queries don't overlap when required, provide a maximum */
+  /* --screen-xs-max: (var(--screen-sm) - 1);
+  --screen-sm-max: (var(--screen-md) - 1);
+  --screen-md-max: (var(--screen-lg) - 1); */
+
+  /* --phone: 'only screen and (max-width: #{var(--screen-xs) - 0.0625})'; - 480px */
+  /* --mobile: 'only screen and (min-width: #{var(--screen-xs)})'; 480px */
+  /* --tablet: 'only screen and (min-width: #{var(--screen-sm)})'; 768px */
+  /* --desktop: 'only screen and (min-width: #{var(--screen-md)})'; 992px */
+  /* --screen: 'only screen and (min-width: #{var(--screen-lg)})'; 1200px */
+
+  /* Buttons */
+  /* ------- */
+
+  --button-font-family: var(--header-font-family);
+  --button-letter-spacing: var(--header-letter-spacing);
+  --button-color: var(--white);
+  --button-background-color: blu;
+  --button-color-hover: var(--button-color);
+  --button-background-color-hover: blue;
+  --button-bordered-color-hover: blue;
+  --button-bordered-background-color: transparent;
+  --button-bordered-background-color-hover: transparent;
+  --button-border-color: blue;
+  --button-border-color-hover: blue;
+  --button-border: .125em solid var(--button-border-color);
+  --button-padding: .75em 2.5em;
+
+  /* Close */
+  /* ----- */
+
+  --close-color: var(--black-30);
+  --close-color-hover: var(--white);
+  --close-width: 4em;
+  --close-height: var(--close-width);
+
+  /* Content */
+  /* ------- */
+
+  --content-width: 75em;
+
+  /* Panel */
+  /* ----- */
+
+  --panel-background: var(--black-80);
+  --panel-padding: 4em;
+  --panel-width: var(--content-width);
+
+  /* Forms */
+  /* ----- */
+
+  --form-label-font-family: var(--header-font-family);
+  --form-label-font-size: var(--small-font-size);
+  --form-label-font-weight: var(--header-x-light-font-weight);
+  --form-input-font-family: var(--body-font-family);
+  --form-input-color: var(--black-10);
+  --form-input-background: var(--black-70);
+  --form-input-border-color: var(--black-70);
+  --form-input-border-hover: blue;
+  --form-input-border: .125em solid var(--form-input-border-color);
+  --form-input-padding: .75em 1em;
+  --form-field-spacing: 1.5em;
+
+  /* Tiles */
+  /* ----- */
+
+  --tile-background: var(--black-10);
+  --tile-color: var(--black-50);
+  --tile-title-color-hover: var(--white);
+  --tile-title-font-size: var(--global-font-size);
+  --title-tagline-color: var(--white);
+  --title-tagline-font-family: var(--header-font-family);
+  --title-tagline-font-size: var(--small-font-size);
+  --tile-caption-padding: 1.5em;
+
+  /* Z-index */
+  /* ------- */
+
+  --close-zindex: 30;
+  --panel-zindex: 20;
+  --tile-zindex: 10;
+}

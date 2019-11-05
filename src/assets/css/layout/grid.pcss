@@ -1,0 +1,133 @@
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 16vw 16vw 16vw 20vw 12vw;
+  grid-column-gap: 5vw;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.grid--outer {
+  padding: 0;
+  grid-template-rows: 10rem auto;
+  align-items: start;
+}
+
+.grid__box:not(:first-child),
+.grid__box:not(:last-child)  {
+  border: 1px solid gray(95);
+  border-width: 0 1px;
+}
+.grid--thumbs {
+  z-index: 100;
+}
+.grid__item {
+  pointer-events: auto;
+  align-self: end;
+  transform: translate3d(0,30px,0);
+}
+.grid__item::after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: calc(100% + 3rem);
+  bottom: 0;
+  left: 0;
+}
+.grid__item:not(.grid__item--more) {
+  cursor: pointer;
+}
+.grid__item-imgwrap {
+  position: relative;
+  overflow: hidden;
+}
+.grid__item-img {
+  width: 100%;
+}
+.grid__item-bg {
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  background-size: cover;
+}
+
+.grid__toggle {
+  background: var(--black-80);
+  color: var(--white);
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  height: calc(12vw + 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  position: relative;
+  width: 100%;
+  pointer-events: auto;
+
+  &:focus {
+    outline: none;
+  }
+}
+.grid__toggle-inner {
+  display: flex;
+  align-items: flex-end;
+}
+.grid__toggle-more {
+  display: inline-block;
+  margin-top: -30px;
+}
+.grid__toggle-back {
+  opacity: 0;
+  position: absolute;
+  height: 50%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.grid__toggle-icon {
+  width: 0.75rem;
+  height: 1.05rem;
+  margin: 0.15rem 0 0 0.5rem;
+  display: inline-block;
+  fill: currentColor;
+  stroke-width: 1px;
+  stroke: var(--white);
+}
+.grid__toggle-icon--more {
+  height: 0.75rem;
+  stroke-width: 2px;
+}
+.grid__item-title,
+.grid__item-number {
+  z-index: 100;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+
+  & span {
+    display: block;
+  }
+}
+.grid__item-title {
+  position: absolute;
+  top: -2rem;
+  right: -1.75rem;
+  white-space: nowrap;
+  margin: 0;
+}
+.grid__item-number {
+  top: -2rem;
+  right: 0;
+  line-height: 1;
+  position: absolute;
+  font-size: 1.5rem;
+}
