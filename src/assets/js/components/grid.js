@@ -17,7 +17,8 @@ export default class Grid {
     const more = new GridItem(this.DOM.moreCtrl);
     // all the elements that are going to move up/down (thumbs + more/back button)
     this.movable = [...this.thumbs, more];
-    // the colorful revealer element/panel that appears behind the images when showing/hiding a project
+    // the colorful revealer element/panel that appears
+    // behind the images when showing/hiding a project
     this.DOM.revealer = document.querySelector('.revealer');
     // the fullview container and its items
     this.DOM.fullview = document.querySelector('.fullview');
@@ -43,7 +44,8 @@ export default class Grid {
       this.hideProject();
     });
 
-    // when resizing the window we need to reset the grid items translation positions (if the fullview is shown).
+    // when resizing the window we need to reset
+    // the grid items translation positions (if the fullview is shown).
     window.addEventListener('resize', () => {
       Site.winsize = { width: window.innerWidth, height: window.innerHeight };
       if (this.isGridHidden) {
@@ -102,7 +104,9 @@ export default class Grid {
       }
       // animate the revealer up or down.
       TweenMax.to(this.DOM.revealer, action === 'show' ? 1 : 1, {
-        ease: action === 'show' ? 'Quint.easeInOut' : 'Quint.easeOut', y: action === 'show' ? '-100%' : dir === 'up' ? '-200%' : '0%', onComplete: resolve,
+        ease: action === 'show' ? 'Quint.easeInOut' : 'Quint.easeOut',
+        y: action === 'show' ? '-100%' : dir === 'up' ? '-200%' : '0%', // eslint-disable-line no-nested-ternary
+        onComplete: resolve,
       });
     });
   }

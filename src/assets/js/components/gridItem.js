@@ -1,4 +1,4 @@
-/* global getRandomFloat, Site */
+/* global Site */
 
 import TweenMax from '../vendor/TweenMax.min';
 import './core';
@@ -15,7 +15,7 @@ export default class GridItem {
       TweenMax.to(inner, speed, {
         delay: 0.2,
         ease: 'Quint.easeInOut',
-        y: action === 'hide' ? this.constructor.name === 'Thumb' ? -1 * Site.winsize.height - 30 : -1 * Site.winsize.height - 30 + inner.offsetHeight / 2 : 0,
+        y: action === 'hide' ? this.constructor.name === 'Thumb' ? -1 * Site.winsize.height - 30 : -1 * Site.winsize.height - 30 + inner.offsetHeight / 2 : 0, // eslint-disable-line no-nested-ternary
       });
 
       // scale the "more/back" box as it moves.

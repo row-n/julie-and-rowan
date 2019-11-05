@@ -28,7 +28,7 @@ export default class Thumb extends GridItem {
         enter = false;
       }
       clearTimeout(this.mousetime);
-      this.mousetime = setTimeout(() => enter = true, 80);
+      this.mousetime = setTimeout(() => enter = true, 80); // eslint-disable-line no-return-assign
     };
     this.mousemoveFn = (ev) => requestAnimationFrame(() => {
       if (!enter) return;
@@ -61,23 +61,23 @@ export default class Thumb extends GridItem {
     };
 
     // Movement settings for the tilt elements.
-    for (const key in this.DOM.tilt) {
+    Object.keys(this.DOM.tilt).forEach((key) => {
       const t = this.tiltconfig[key].translation;
       TweenMax.to(this.DOM.tilt[key], 1, {
         // ease: 'Expo.easeInOut',
-        x: (t.x[1] - t.x[0]) / bounds.width * relmousepos.x + t.x[0],
-        y: (t.y[1] - t.y[0]) / bounds.height * relmousepos.y + t.y[0],
+        x: ((t.x[1] - t.x[0]) / bounds.width) * relmousepos.x + t.x[0],
+        y: ((t.y[1] - t.y[0]) / bounds.height) * relmousepos.y + t.y[0],
       });
-    }
+    });
   }
 
   // mouseleave: reset positions.
   resetTilt() {
-    for (const key in this.DOM.tilt) {
+    Object.keys(this.DOM.tilt).forEach((key) => {
       TweenMax.to(this.DOM.tilt[key], 2, {
         x: 0,
         y: 0,
       });
-    }
+    });
   }
 }

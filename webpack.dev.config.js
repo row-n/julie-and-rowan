@@ -23,6 +23,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: [/node_modules/, path.resolve(__dirname, 'src/assets/js/vendor/')],
         loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+          failOnWarning: false,
+          emitError: true,
+          failOnError: false,
+        },
       },
       {
         test: /\.(js|jsx)$/,
