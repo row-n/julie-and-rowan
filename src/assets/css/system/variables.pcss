@@ -81,32 +81,6 @@
   --list-side-margin: 1.25rem;
   --list-nested-side-margin: 1.25rem;
 
-  /* Media Queries */
-  /* ------------- */
-
-  /* Extra small screen / phone */
-  --screen-xs: 30em; /* 480px */
-
-  /* Small screen / tablet */
-  --screen-sm: 48em; /* 768px */
-
-  /* Medium screen / desktop */
-  --screen-md: 62em; /* 992px */
-
-  /* Large screen / wide desktop */
-  --screen-lg: 75em; /* 1200px */
-
-  /* So media queries don't overlap when required, provide a maximum */
-  /* --screen-xs-max: (var(--screen-sm) - 1);
-  --screen-sm-max: (var(--screen-md) - 1);
-  --screen-md-max: (var(--screen-lg) - 1); */
-
-  /* --phone: 'only screen and (max-width: #{var(--screen-xs) - 0.0625})'; - 480px */
-  /* --mobile: 'only screen and (min-width: #{var(--screen-xs)})'; 480px */
-  /* --tablet: 'only screen and (min-width: #{var(--screen-sm)})'; 768px */
-  /* --desktop: 'only screen and (min-width: #{var(--screen-md)})'; 992px */
-  /* --screen: 'only screen and (min-width: #{var(--screen-lg)})'; 1200px */
-
   /* Buttons */
   /* ------- */
 
@@ -178,3 +152,9 @@
   --panel-zindex: 20;
   --tile-zindex: 10;
 }
+
+@custom-media --phone (max-width: 29.9375em);
+@custom-media --mobile (min-width: 30em);
+@custom-media --tablet (min-width: 48em);
+@custom-media --desktop (min-width: 62em);
+@custom-media --screen (min-width: 75em);
