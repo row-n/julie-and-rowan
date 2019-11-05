@@ -4,7 +4,6 @@ Wedding website for rowanandjulie.com, built with [Webpack](https://webpack.js.o
 
 ## Development dependencies
 
-* Install [node](https://nodejs.org/en/) >=8.0.0
 * Install [yarn](https://yarnpkg.com/en/docs/install)
 
 ## Installation and Setup
