@@ -4,9 +4,23 @@
 }
 
 .title {
-  color: var(--black-50);
-  font-size: 4em;
+  color: var(--black-100);
+  font-size: 5em;
   line-height: 75%;
   text-align: left;
+  text-indent: -.2em;
   margin: 0;
+
+  @media (--mobile) {
+    line-height: 150%;
+  }
+
+  @media (--tablet) {
+    line-height: 175%;
+  }
+}
+
+.date {
+  color: var(--black-80);
+  font-size: 2em;
 }
