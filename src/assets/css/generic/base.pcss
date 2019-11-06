@@ -5,3 +5,18 @@ body {
   font-size: var(--body-font-size);
   line-height: var(--global-lineheight);
 }
+
+.main {
+  position: relative;
+
+  @media (--tablet) {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.icon-library {
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
