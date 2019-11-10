@@ -1,26 +1,44 @@
 .title-wrap {
-  padding: 0;
-  grid-area: 2/2/2/6;
+  padding: 2rem 0;
+
+  @media (--tablet) {
+    padding: 0;
+    grid-area: 2/2/2/6;
+  }
 }
 
 .title {
-  color: var(--gold-dark);
-  font-size: 5em;
+  color: var(--gold-mid);
   line-height: 75%;
   text-align: left;
-  text-indent: -.2em;
-  margin: 0;
+
+  @media (--phone) {
+    font-size: var(--h2-font-size);
+  }
 
   @media (--mobile) {
     line-height: 150%;
   }
 
   @media (--tablet) {
-    line-height: 175%;
+    text-indent: -.1em;
   }
+}
+
+.sub-title {
+  color: var(--gold-mid);
+  font-family: var(--body-font-family);
 }
 
 .date {
   color: var(--gold-mid);
-  font-size: 2em;
+
+  &::before {
+    content: '―';
+    margin-right: .5em;
+  }
+
+  @media (--tablet) {
+    /* font-size: 2em; */
+  }
 }
