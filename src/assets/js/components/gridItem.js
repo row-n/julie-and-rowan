@@ -35,7 +35,7 @@ export default class GridItem {
 
     // the more box text animation (switch from "more" to "back").
     if (this.constructor.name === 'GridItem') {
-      TweenMax.to(this.DOM.el.querySelector('.grid__toggle-more'), action === 'hide' ? 0.2 : 0.4, {
+      TweenMax.to(this.DOM.el.querySelector('.toggle-more'), action === 'hide' ? 0.2 : 0.4, {
         delay: action === 'hide' ? 0.2 : 1,
         ease: action === 'hide' ? 'Quad.easeIn' : 'Quad.easeOut',
         startAt: action === 'hide' ? {} : { opacity: 0, y: '-150%' },
@@ -43,7 +43,7 @@ export default class GridItem {
         opacity: action === 'hide' ? 0 : 1,
       });
 
-      TweenMax.to(this.DOM.el.querySelector('.grid__toggle-back'), action === 'hide' ? 0.4 : 0.2, {
+      TweenMax.to(this.DOM.el.querySelector('.toggle-back'), action === 'hide' ? 0.4 : 0.2, {
         delay: action === 'hide' ? 1 : 0.2,
         ease: action === 'hide' ? 'Quad.easeOut' : 'Quad.easeIn',
         startAt: action === 'hide' ? { opacity: 0, y: '50%' } : {},
