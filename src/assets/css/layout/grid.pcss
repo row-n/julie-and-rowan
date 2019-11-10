@@ -22,9 +22,13 @@
   }
 
   &--outer {
-    padding: 0;
-    grid-template-rows: 10em auto;
-    align-items: start;
+    padding: 1.5em;
+
+    @media (--tablet) {
+      padding: 0;
+      grid-template-rows: 10em auto;
+      align-items: start;
+    }
 
     @media (--desktop) {
       grid-template-rows: 7em auto;
@@ -32,12 +36,16 @@
   }
 
   &__item {
-    align-self: end;
+    @media (--tablet) {
+      align-self: end;
+    }
   }
 
   &__box:not(:first-child),
-  &__box:not(:last-child)  {
-    border: .0625em solid gray(95);
-    border-width: 0 1px;
+  &__box:not(:last-child) {
+    @media (--tablet) {
+      border: .0625em solid gray(95);
+      border-width: 0 1px;
+    }
   }
 }
