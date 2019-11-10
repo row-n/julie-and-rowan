@@ -8,9 +8,9 @@ export default class Thumb extends GridItem {
   constructor(el) {
     super(el);
     this.DOM.tilt = {};
-    this.DOM.tilt.title = this.DOM.el.querySelector('.grid__item-title');
-    this.DOM.tilt.number = this.DOM.el.querySelector('.grid__item-number');
-    this.DOM.tilt.img = this.DOM.el.querySelector('.grid__item-imgwrap > .grid__item-bg');
+    this.DOM.tilt.title = this.DOM.el.querySelector('.thumb__title');
+    this.DOM.tilt.number = this.DOM.el.querySelector('.thumb__number');
+    this.DOM.tilt.img = this.DOM.el.querySelector('.thumb__imgwrap > .thumb__bg');
 
     this.tiltconfig = {
       title: { translation: { x: [-8, 8], y: [4, -4] } },

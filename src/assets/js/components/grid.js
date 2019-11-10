@@ -9,11 +9,11 @@ export default class Grid {
   constructor() {
     this.DOM = { grid: document.querySelector('.grid--thumbs') };
     // the 4 thumbs
-    this.DOM.thumbs = Array.from(this.DOM.grid.querySelectorAll('.grid__item:not(.grid__item--more)'));
+    this.DOM.thumbs = Array.from(this.DOM.grid.querySelectorAll('.thumb:not(.thumb--more)'));
     this.thumbs = [];
     this.DOM.thumbs.forEach((thumb) => this.thumbs.push(new Thumb(thumb)));
     // the more/back box
-    this.DOM.moreCtrl = this.DOM.grid.querySelector('.grid__item--more');
+    this.DOM.moreCtrl = this.DOM.grid.querySelector('.thumb--more');
     const more = new GridItem(this.DOM.moreCtrl);
     // all the elements that are going to move up/down (thumbs + more/back button)
     this.movable = [...this.thumbs, more];

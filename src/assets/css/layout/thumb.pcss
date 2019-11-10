@@ -1,0 +1,63 @@
+.thumb {
+  pointer-events: auto;
+  align-self: end;
+  transform: translate3d(0,30px,0);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 2rem);
+    height: calc(100% + 3rem);
+    bottom: 0;
+    left: 0;
+  }
+
+  &:not(.thumb--more) {
+    cursor: pointer;
+  }
+
+  &__imgwrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__bg {
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    background-size: cover;
+  }
+
+  &__title,
+  &__number {
+    z-index: 100;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+
+    & span {
+      display: block;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: -2rem;
+    right: -1.75rem;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  &__number {
+    top: -2rem;
+    right: 0;
+    line-height: 1;
+    position: absolute;
+    font-size: 1.5rem;
+  }
+}

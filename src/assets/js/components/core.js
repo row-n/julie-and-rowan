@@ -3,7 +3,7 @@
 import imagesLoaded from '../vendor/imagesloaded.pkgd.min';
 
 // Preload all the images in the page..
-imagesLoaded(document.querySelectorAll(['.fullview__item', '.grid__item-bg']), { background: true }, () => document.body.classList.remove('loading'));
+imagesLoaded(document.querySelectorAll(['.fullview__item', '.thumb__bg']), { background: true }, () => document.body.classList.remove('loading'));
 
 window.Site = (function globalVars(window) {
   const getRandomFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
