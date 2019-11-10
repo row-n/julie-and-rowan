@@ -20,9 +20,9 @@ export default class Grid {
     // the colorful revealer element/panel that appears
     // behind the images when showing/hiding a project
     this.DOM.revealer = document.querySelector('.revealer');
-    // the fullview container and its items
-    this.DOM.fullview = document.querySelector('.fullview');
-    this.DOM.fullviewItems = this.DOM.fullview.querySelectorAll('.fullview__item');
+    // the panel container and its items
+    this.DOM.panel = document.querySelector('.panel');
+    this.DOM.panelItems = this.DOM.panel.querySelectorAll('.panel__item');
     // current thumb/project index
     this.current = -1;
     // init/bind events
@@ -45,7 +45,7 @@ export default class Grid {
     });
 
     // when resizing the window we need to reset
-    // the grid items translation positions (if the fullview is shown).
+    // the grid items translation positions (if the panel is shown).
     window.addEventListener('resize', () => {
       Site.winsize = { width: window.innerWidth, height: window.innerHeight };
       if (this.isGridHidden) {
@@ -74,9 +74,9 @@ export default class Grid {
     this.isGridHidden = action === 'show';
     Site.allowTilt = !this.isGridHidden;
     this.showRevealer().then(() => {
-      this.DOM.fullviewItems[this.current].style.opacity = this.isGridHidden ? 1 : 0;
-      this.DOM.fullview.style.opacity = this.isGridHidden ? 1 : 0;
-      this.DOM.fullview.style.pointerEvents = this.isGridHidden ? 'auto' : 'none';
+      this.DOM.panelItems[this.current].style.opacity = this.isGridHidden ? 1 : 0;
+      this.DOM.panel.style.opacity = this.isGridHidden ? 1 : 0;
+      this.DOM.panel.style.pointerEvents = this.isGridHidden ? 'auto' : 'none';
       this.hideRevealer(this.isGridHidden ? 'up' : 'down');
       this.isAnimating = false;
     });
