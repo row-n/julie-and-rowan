@@ -25,6 +25,14 @@
     padding: 0;
     grid-template-rows: 10em auto;
     align-items: start;
+
+    @media (--desktop) {
+      grid-template-rows: 7em auto;
+    }
+  }
+
+  &__item {
+    align-self: end;
   }
 
   &__box:not(:first-child),
