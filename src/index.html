@@ -35,8 +35,8 @@
       <div class="grid grid--outer">
         <div class="title-wrap">
           <h1 class="title">Julie + Rowan</h1>
-          <h4 class="sub-title">
-            are getting married<br>
+          <h2 class="sub-title">are getting married</h2>
+          <h4>
             <span class="date">21&middot;03&middot;20</span>
           </h4>
         </div>
@@ -48,10 +48,62 @@
           <div class="panel__content">
             <h2 class="panel__title">RSVP</h2>
             <div class="panel__description">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <div class="form">
+                <form action="" class="form">
+                  <div class="form__field">
+                    <label for="">Will you be attending?</label>
+                    <input type="radio" name="attend_yes" value=""> Yes, would love to!
+                    <input type="radio" name="attend_no" value=""> No, can't make it unfortunately
+                  </div>
+                  <div class="form__field form__field--half">
+                    <label for="first_name">First name:</label>
+                    <input type="text" name="first_name" value="">
+                  </div>
+                  <div class="form__field form__field--half">
+                    <label for="last_name">Last name:</label>
+                    <input type="text" name="last_name" value="">
+                  </div>
+                  <div class="form__field">
+                    <label for="email">Email address:</label>
+                    <input type="email" name="email" value="">
+                  </div>
+                  <div class="form__field">
+                    <button class="button button--sm" data-toggle="collapse" data-target="#additional_guest">Add an additional guest +</button>
+                  </div>
+                  <div class="form__field is-hidden" id="additional_guest">
+                    <label for="first_name_2">First name:</label>
+                    <input type="text" name="first_name_2" value="">
+                  </div>
+                  <div class="form__field">
+                    <label for="">Would you like bus transport?</label>
+                    <input type="radio" name="bus_yes" value="" data-toggle="collapse" data-target="#bus_transport">
+                    <label for="bus_yes">Yes</label>
+                    <input type="radio" name="bus_no" value="">
+                    <label for="bus_no">No</label>
+                  </div>
+                  <div class="form__field is-hidden" id="bus_transport">
+                    <label for="bus_location">Would you like bus transport?</label>
+                    <select name="bus_location" id="bus_location">
+                      <option value="papamoa">Papamoa - Papamoa Tavern</option>
+                      <option value="mt_maunganui">Mt Maunganui - Bayfair</option>
+                      <option value="otumoetai">Otumoetai - Otumoetai Medical Centre</option>
+                      <option value="bethlehem">Bethlehem - Bethlehem Countdown</option>
+                    </select>
+                  </div>
+                  <div class="form__field">
+                    <label for="dietary_requirements">Dietary requirements:</label>
+                    <textarea name="dietary_requirements"></textarea>
+                  </div>
+                  <div class="form__field">
+                    <label for="additional_info">Additional information:</label>
+                    <textarea name="additional_info"></textarea>
+                  </div>
+                  <div class="form__field">
+                    <button type="submit" class="button">Send response</button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <form action="" class="form"></form>
-            <span class="panel__more">more</span>
           </div>
         </div>
         <div class="panel__item" style="background-image: url(/assets/img/venue.jpg)">
@@ -59,11 +111,12 @@
           <div class="panel__content">
             <h2 class="panel__title">Venue</h2>
             <div class="panel__description">
-              <h5>L’Orangerie Wedding Venue</h5>
-              <h6>218 Rowe Road,<br>
+              <h4>L’Orangerie</h4>
+              <h5>218 Rowe Road,<br>
               Ohauti,<br>
-              Tauranga</h6>
-              <p>L’Orangerie is more than just a sumptuously wild garden located among huge old trees and green pastures of a 100 acre farm in the hills above Tauranga.</p>
+              Tauranga</h5>
+              <h5>2pm Ceremony</h5>
+              <p>Bus transit is the preferred transport option, for more information please see the Getting There page.</p>
             </div>
           </div>
         </div>

@@ -1,37 +1,32 @@
-.btn {
+.button {
   appearance: none;
-  background-color: $button-background-color;
-  border: $button-border;
+  background-color: transparent;
+  border: .0625em solid var(--gold-dark);
   border-radius: 0;
-  color: $button-color;
+  color: var(--gold-dark);
   cursor: pointer;
   display: inline-block;
-  font-family: $button-font-family;
-  letter-spacing: $button-letter-spacing;
-  padding: $button-padding;
+  font-family: var(--sub-header-font-family);
+  font-size: var(--large-font-size);
+  padding: .5em 1em;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color $global-duration ease-in-out, border-color $global-duration ease-in-out, color $global-duration ease-in-out;
+  transition: background-color var(--global-duration) ease-in-out, border-color var(--global-duration) ease-in-out, color var(--global-duration) ease-in-out;
   white-space: nowrap;
 
   &:hover {
-    background-color: $button-background-color-hover;
-    border-color: $button-border-color-hover;
-    color: $button-color-hover;
+    background-color: var(--gold-dark);
+    border-color: var(--gold-dark);
+    color: var(--white);
   }
 
-  &.btn--bordered {
-    background-color: $button-bordered-background-color;
-
-    &:hover {
-      background-color: $button-bordered-background-color-hover;
-      color: $button-bordered-color-hover;
-    }
+  &--sm {
+    padding: .25em .5em;
+    font-size: var(--x-small-font-size);
   }
 
   .icon {
-    fill: $button-color;
+    fill: var(--button-color);
     margin-right: .5em;
     margin-top: -.4em;
   }
