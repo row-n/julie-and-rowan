@@ -32,6 +32,11 @@
     @media (--screen) {
       grid-template-columns: 65% 35%;
     }
+
+    &.is-active {
+      opacity: 1;
+      z-index: 10;
+    }
   }
 
   &__content {
@@ -40,9 +45,9 @@
 
     @media (--tablet) {
       align-self: end;
-      background-color: rgba(255, 255, 255, .9);
+      background-color: rgba(255, 255, 255, .95);
       text-align: right;
-      padding: 3em 5em;
+      padding: 3em;
     }
   }
 
@@ -53,7 +58,7 @@
     @media (--tablet) {
       display: block;
       position: absolute;
-      margin: 2rem;
+      margin: 2em;
       bottom: 0;
       top: auto;
       left: 0;
@@ -92,7 +97,7 @@
 
   &__description {
     @media (--tablet) {
-      max-width: 360px;
+      /* max-width: 360px; */
       margin-left: auto;
     }
   }

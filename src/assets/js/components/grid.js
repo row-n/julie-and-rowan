@@ -74,7 +74,11 @@ export default class Grid {
     this.isGridHidden = action === 'show';
     Site.allowTilt = !this.isGridHidden;
     this.showRevealer().then(() => {
-      this.DOM.panelItems[this.current].style.opacity = this.isGridHidden ? 1 : 0;
+      if (this.isGridHidden) {
+        this.DOM.panelItems[this.current].classList.add('is-active');
+      } else {
+        this.DOM.panelItems[this.current].classList.remove('is-active');
+      }
       this.DOM.panel.style.opacity = this.isGridHidden ? 1 : 0;
       this.DOM.panel.style.pointerEvents = this.isGridHidden ? 'auto' : 'none';
       this.hideRevealer(this.isGridHidden ? 'up' : 'down');
