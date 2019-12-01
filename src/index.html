@@ -1,27 +1,4 @@
-<!DOCTYPE>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Rowan &amp; Julie</title>
-    <meta name="author" content="name">
-    <meta name="description" content="description here">
-    <meta name="keywords" content="keywords,here">
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="site.css" type="text/css">
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-XXXXXXXX-Y']);
-      _gaq.push(['_trackPageview']);
-      (function()
-      {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </head>
+  ${require('./partials/head.html')}
   <body>
     <div class="main">
       <div class="grid grid--deco">
@@ -35,7 +12,7 @@
       <div class="grid grid--outer">
         <div class="title-wrap">
           <h1 class="title">Julie + Rowan</h1>
-          <h2 class="sub-title">are getting married</h2>
+          <h2 class="sub-title">are getting married!</h2>
           <h4>
             <span class="date">21&middot;03&middot;20</span>
           </h4>
@@ -43,7 +20,7 @@
       </div>
 
       <div class="panel">
-        <div class="panel__item" style="background-image: url(/assets/img/rsvp.jpg)">
+        <div class="panel__item" style="background-image: url('${require('./assets/img/rsvp.jpg')}')">
           <h5 class="panel__number">01</h5>
           <div class="panel__content">
             <h2 class="panel__title">RSVP</h2>
@@ -91,10 +68,16 @@
                     </select>
                   </div>
                   <div class="form__field">
+                    <button class="button button--sm" data-toggle="collapse" data-target="#dietary_requirements">Add dietary requirements +</button>
+                  </div>
+                  <div class="form__field is-hidden" id="dietary_requirements">
                     <label for="dietary_requirements">Dietary requirements:</label>
                     <textarea name="dietary_requirements"></textarea>
                   </div>
                   <div class="form__field">
+                    <button class="button button--sm" data-toggle="collapse" data-target="#additional_info">Add any additional information +</button>
+                  </div>
+                  <div class="form__field is-hidden" id="additional_info">
                     <label for="additional_info">Additional information:</label>
                     <textarea name="additional_info"></textarea>
                   </div>
@@ -106,7 +89,7 @@
             </div>
           </div>
         </div>
-        <div class="panel__item" style="background-image: url(/assets/img/venue.jpg)">
+        <div class="panel__item" style="background-image: url('${require('./assets/img/venue.jpg')}')">
           <h5 class="panel__number">02</h5>
           <div class="panel__content">
             <h2 class="panel__title">Venue</h2>
@@ -120,17 +103,17 @@
             </div>
           </div>
         </div>
-        <div class="panel__item" style="background-image: url(/assets/img/transport.jpg)">
+        <div class="panel__item" style="background-image: url('${require('./assets/img/transport.jpg')}')">
           <h5 class="panel__number">03</h5>
           <div class="panel__content">
             <h2 class="panel__title">Getting there</h2>
             <div class="panel__description">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <p>Bus transportation is the preffered approach. We have organised pick up locations around the Tauranga area, these locations will also be used for drop off after the reception.</p>
             </div>
             <span class="panel__more">more</span>
           </div>
         </div>
-        <div class="panel__item" style="background-image: url(/assets/img/next-day.jpg)">
+        <div class="panel__item" style="background-image: url('${require('./assets/img/next-day.jpg')}')">
           <h5 class="panel__number">04</h5>
           <div class="panel__content">
             <h2 class="panel__title">The next day</h2>
@@ -150,39 +133,39 @@
           <p class="thumb__title large"><span>RSVP</span></p>
           <span class="thumb__number"><span>01</span></span>
           <div class="thumb__imgwrap">
-            <img class="thumb__img" src="/assets/img/rsvp-thumb.jpg" alt="RSVP" />
-            <div class="thumb__bg" style="background-image: url(/assets/img/rsvp-thumb.jpg)"></div>
+            <img class="thumb__img" src="./assets/img/rsvp-thumb.jpg" alt="RSVP" />
+            <div class="thumb__bg" style="background-image: url('${require('./assets/img/rsvp-thumb.jpg')}')"></div>
           </div>
         </div>
         <div class="grid__item thumb" data-revealer-color="#ead297">
           <p class="thumb__title large"><span>Venue</span></p>
           <span class="thumb__number"><span>02</span></span>
           <div class="thumb__imgwrap">
-            <img class="thumb__img" src="/assets/img/venue-thumb.jpg" alt="Venue" />
-            <div class="thumb__bg" style="background-image: url(/assets/img/venue-thumb.jpg)"></div>
+            <img class="thumb__img" src="./assets/img/venue-thumb.jpg" alt="Venue" />
+            <div class="thumb__bg" style="background-image: url('${require('./assets/img/venue-thumb.jpg')}')"></div>
           </div>
         </div>
         <div class="grid__item thumb" data-revealer-color="#ead297">
           <p class="thumb__title large"><span>Getting there</span></p>
           <span class="thumb__number"><span>03</span></span>
           <div class="thumb__imgwrap">
-            <img class="thumb__img" src="/assets/img/transport-thumb.jpg" alt="Transport" />
-            <div class="thumb__bg" style="background-image: url(/assets/img/transport-thumb.jpg)"></div>
+            <img class="thumb__img" src="./assets/img/transport-thumb.jpg" alt="Transport" />
+            <div class="thumb__bg" style="background-image: url('${require('./assets/img/transport-thumb.jpg')}')"></div>
           </div>
         </div>
         <div class="grid__item thumb" data-revealer-color="#ead297">
           <p class="thumb__title large"><span>The next day</span></p>
           <span class="thumb__number"><span>04</span></span>
           <div class="thumb__imgwrap">
-            <img class="thumb__img" src="/assets/img/next-day-thumb.jpg" alt="The next day" />
-            <div class="thumb__bg" style="background-image: url(/assets/img/next-day-thumb.jpg)"></div>
+            <img class="thumb__img" src="./assets/img/next-day-thumb.jpg" alt="The next day" />
+            <div class="thumb__bg" style="background-image: url('${require('./assets/img/next-day-thumb.jpg')}')"></div>
           </div>
         </div>
         <div class="grid__item thumb thumb--more">
           <button class="toggle">
             <span class="toggle-inner toggle-more">
-              <svg class="toggle-icon"><use xlink:href="#icon-mail"></use></svg>
               <span class="toggle-text">Contact</span>
+              <svg class="toggle-icon"><use xlink:href="#icon-mail"></use></svg>
             </span>
             <span class="toggle-inner toggle-back">
               <span class="toggle-text">Back</span>
@@ -192,29 +175,4 @@
         </div>
       </div>
     </div>
-    <svg class="hidden icon-library">
-      <symbol id="icon-arrow" viewBox="0 0 24 24">
-        <title>arrow</title>
-        <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
-      </symbol>
-      <symbol id="icon-drop" viewBox="0 0 24 24">
-        <title>drop</title>
-        <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
-      </symbol>
-      <symbol id="icon-mail" viewBox="0 0 24 24">
-        <title>mail</title>
-        <path d="M2.016 21v-6.984l15-2.016-15-2.016v-6.984l21 9z"></path>
-      </symbol>
-      <symbol id="icon-plus" viewBox="0 0 25 24">
-        <title>plus</title>
-        <path d="M13.568 11.216h11.216v1.568H13.568V24H12V12.784H.784v-1.568H12V0h1.568v11.216z"/>
-      </symbol>
-      <symbol id="icon-arrowdown" viewBox="0 0 12 25">
-        <title>arrow down</title>
-        <path d="M4.916.3v21.017l-3.563-3.564L.25 18.856 5.7 24.3l5.45-5.444-1.102-1.103-3.564 3.564V.3z"/>
-      </symbol>
-    </svg>
-
-    <script type="text/javascript" src="site.bundle.js"></script>
-  </body>
-</html>
+    ${require('./partials/foot.html')}
