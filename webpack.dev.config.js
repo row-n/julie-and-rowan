@@ -2,7 +2,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
-require('@babel/polyfill');
 
 module.exports = {
   mode: 'development',
@@ -12,7 +11,7 @@ module.exports = {
     site: [path.resolve(__dirname, 'src/assets/js/site.js'), path.resolve(__dirname, 'src/assets/css/site.pcss')],
   },
   output: {
-    path: path.resolve(__dirname, 'dist/assets'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd',
   },
@@ -49,10 +48,26 @@ module.exports = {
         ],
       },
       {
-        test: /\.(eot|otf|ttf|woff|woff2|svg|jpg)$/,
+        test: /\.(eot|otf|ttf|woff|woff2|svg)$/i,
         use: {
           loader: 'url-loader',
         },
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          esModule: false,
+        },
+      },
+      {
+        test: /\.(html)$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            interpolate: true,
+          },
+        }],
       },
     ],
   },
@@ -81,18 +96,12 @@ module.exports = {
     watchContentBase: true,
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html',
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery',
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inject: false,
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],

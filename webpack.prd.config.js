@@ -1,8 +1,9 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const pkg = require('./package.json');
-require('@babel/polyfill');
 
 module.exports = {
   mode: 'production',
@@ -12,8 +13,8 @@ module.exports = {
     site: [path.resolve(__dirname, 'src/assets/js/site.js'), path.resolve(__dirname, 'src/assets/css/site.pcss')],
   },
   output: {
-    path: path.resolve(__dirname, 'dist/assets'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js',
     libraryTarget: 'umd',
   },
   module: {
@@ -21,7 +22,7 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, path.resolve(__dirname, 'src/assets/js/vendor/')],
         loader: 'eslint-loader',
       },
       {
@@ -43,17 +44,36 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg)/,
-        use: {
-          loader: 'svg-url-loader',
-          options: {},
-        },
-      },
-      {
-        test: /\.(woff|woff2)$/,
+        test: /\.(eot|otf|ttf|woff|woff2|svg)$/i,
         use: {
           loader: 'url-loader',
         },
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'images/',
+              publicPath: 'images/',
+              esModule: false,
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(html)$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            interpolate: true,
+          },
+        }],
       },
     ],
   },
@@ -74,14 +94,13 @@ module.exports = {
     entrypoints: false,
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].min.css',
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html',
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery',
+    new MiniCssExtractPlugin({
+      filename: '[name].[chunkhash].css',
     }),
     new webpack.BannerPlugin({
       banner: ['/*!', ` * @project        ${pkg.name}`, ` * @author         ${pkg.author}`, ` * @release        ${pkg.version}`, ' */', ''].join(
