@@ -1,7 +1,7 @@
 {
   "name": "julie-and-rowan",
   "version": "1.0.0",
-  "description": "Wedding site, built with Webpack for rowanandjulie.com",
+  "description": "Wedding site, built with Webpack for julieandrowan.com",
   "main": "",
   "dependencies": {},
   "devDependencies": {
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/row-n/rowan-and-julie.git"
+    "url": "git+https://github.com/row-n/julie-and-rowan.git"
   },
   "keywords": [
     "webpack",
@@ -54,7 +54,7 @@
   "author": "Rowan Parkinson <rowan.parkinson@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/row-n/rowan-and-julie/issues"
+    "url": "https://github.com/row-n/julie-and-rowan/issues"
   },
   "homepage": "http://julieandrowan.com"
 }
