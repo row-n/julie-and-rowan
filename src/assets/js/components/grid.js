@@ -52,7 +52,7 @@ export default class Grid {
         this.movable.forEach((item) => {
           Array.from(item.DOM.el.children).forEach((child) => {
             TweenMax.set(child, {
-              y: item.constructor.name === 'Thumb' ? -1 * Site.winsize.height - 30 : -1 * Site.winsize.height - 30 + child.offsetHeight / 2,
+              y: item.constructor.name === 'Thumb' ? -1 * Site.winsize.height - 36 : -1 * Site.winsize.height - 36 + child.offsetHeight / 2,
             });
           });
         });
