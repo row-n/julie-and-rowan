@@ -20,7 +20,8 @@
       </div>
 
       <div class="panel">
-        <div class="panel__item" style="background-image: url('${require('./assets/img/rsvp.jpg')}')">
+        <!-- <div class="panel__item" style="background-image: url('${require('./assets/img/rsvp.jpg')}')"> -->
+        <div class="panel__item panel__item--rsvp">
           <h5 class="panel__number">01</h5>
           <div class="panel__content">
             <h2 class="panel__title">RSVP</h2>
@@ -89,7 +90,7 @@
             </div>
           </div>
         </div>
-        <div class="panel__item" style="background-image: url('${require('./assets/img/venue.jpg')}')">
+        <div class="panel__item panel__item--venue" style="background-image: url('${require('./assets/img/venue.jpg')}')">
           <h5 class="panel__number">02</h5>
           <div class="panel__content">
             <h2 class="panel__title">Venue</h2>
@@ -103,17 +104,22 @@
             </div>
           </div>
         </div>
-        <div class="panel__item" style="background-image: url('${require('./assets/img/transport.jpg')}')">
+        <div class="panel__item panel__item--getting-there" style="background-image: url('${require('./assets/img/transport.jpg')}')">
           <h5 class="panel__number">03</h5>
           <div class="panel__content">
             <h2 class="panel__title">Getting there</h2>
             <div class="panel__description">
-              <p>Bus transportation is the preffered approach. We have organised pick up locations around the Tauranga area, these locations will also be used for drop off after the reception.</p>
+              <p>To reduce driveway congestion it is preferred that guests use the bus transport provided.</p>
+              <p>We have organised locations around the Tauranga area, these locations will be used for guest pick up before the ceremony and drop off after the reception.</p>
+              <h5>Locations</h5>
+              <p>Papamoa - Papamoa Tavern<br />
+              Mt Maunganui - Bayfair<br />
+              Otumoetai - Otumoetai Medical Centre<br />
+              Bethlehem - Bethlehem Countdown</p>
             </div>
-            <span class="panel__more">more</span>
           </div>
         </div>
-        <div class="panel__item" style="background-image: url('${require('./assets/img/next-day.jpg')}')">
+        <div class="panel__item panel__item--the-next-day" style="background-image: url('${require('./assets/img/next-day.jpg')}')">
           <h5 class="panel__number">04</h5>
           <div class="panel__content">
             <h2 class="panel__title">The next day</h2>
@@ -162,16 +168,16 @@
           </div>
         </div>
         <div class="grid__item thumb thumb--more">
-          <button class="toggle">
-            <span class="toggle-inner toggle-more">
+          <div class="toggle">
+            <a href="mailto:contact@julieandrowan.com?subject=Wedding enquiry" class="toggle-inner toggle-more">
               <span class="toggle-text">Contact</span>
               <svg class="toggle-icon"><use xlink:href="#icon-mail"></use></svg>
-            </span>
-            <span class="toggle-inner toggle-back">
+            </a>
+            <button class="toggle-inner toggle-back">
               <span class="toggle-text">Back</span>
               <svg class="toggle-icon"><use xlink:href="#icon-arrowdown"></use></svg>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>

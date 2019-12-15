@@ -12,8 +12,8 @@
   &__item {
     background-size: cover;
     background-position: 50% 50%;
-    padding: 80vh 1.5rem 1.5rem;
-    margin: 0 0 2rem 0;
+    padding: 80vh 1.5em 1.5em;
+    margin: 0 0 2em 0;
 
     @media (--tablet) {
       display: grid;
@@ -29,13 +29,37 @@
       margin: 0;
     }
 
-    @media (--screen) {
-      grid-template-columns: 65% 35%;
-    }
-
     &.is-active {
       opacity: 1;
       z-index: 10;
+    }
+
+    &--rsvp {
+      @media (--tablet) {
+        background-color: var(--white);
+      }
+
+      @media (--screen) {
+        grid-template-columns: 10% 90%;
+      }
+    }
+
+    &--venue {
+      @media (--screen) {
+        grid-template-columns: 60% 40%;
+      }
+    }
+
+    &--getting-there {
+      @media (--screen) {
+        grid-template-columns: 50% 50%;
+      }
+    }
+
+    &--the-next-day {
+      @media (--screen) {
+        grid-template-columns: 65% 35%;
+      }
     }
   }
 
@@ -45,7 +69,7 @@
 
     @media (--tablet) {
       align-self: end;
-      background-color: rgba(255, 255, 255, .95);
+      background-color: rgba(255, 255, 255, .90);
       text-align: right;
       padding: 3em;
     }
