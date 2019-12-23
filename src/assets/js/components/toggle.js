@@ -7,6 +7,7 @@ export default class Toggle {
     this.DOM = { el };
     this.DOM.trigger = this.DOM.el.dataset.toggle;
     this.DOM.target = document.querySelector(this.DOM.el.dataset.target);
+    this.DOM.originalText = this.DOM.el.innerHTML;
 
     // init/bind events
     this.initEvents(el);
@@ -15,23 +16,25 @@ export default class Toggle {
   initEvents(el) {
     // Listen for click events
     el.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      if (!event.target.classList.contains('is-active')) {
-        event.target.classList.add('is-active');
-
-        if (event.target.dataset.mdsOverlay) {
-          document.body.classList.add('overlay');
-        }
-      } else {
-        event.target.classList.remove('is-active');
-
-        if (event.target.dataset.mdsOverlay) {
-          document.body.classList.remove('overlay');
-        }
-      }
+      // event.preventDefault();
 
       if (!this.DOM.trigger) return;
+
+      if (this.DOM.target.classList.contains('is-hidden')) {
+        this.DOM.el.innerHTML = event.target.dataset.replacement;
+      } else {
+        this.DOM.el.innerHTML = this.DOM.originalText;
+      }
+
+      if (this.DOM.trigger === 'open') {
+        Toggle.expand(this.DOM.target);
+        return;
+      }
+
+      if (this.DOM.trigger === 'close') {
+        Toggle.collapse(this.DOM.target);
+        return;
+      }
 
       if (this.DOM.trigger === 'collapse') {
         if (this.DOM.target.classList.contains('is-visible')) {
@@ -41,32 +44,7 @@ export default class Toggle {
 
         Toggle.expand(this.DOM.target);
       }
-
-      if (this.DOM.trigger === 'toggle') {
-        if (this.DOM.target.classList.contains('is-visible')) {
-          Toggle.hide(this.DOM.target);
-          return;
-        }
-
-        Toggle.show(this.DOM.target);
-      }
     }, false);
-  }
-
-  // Show an element
-  static show(elem) {
-    const $el = elem;
-
-    $el.classList.remove('is-hidden');
-    $el.classList.add('is-visible');
-  }
-
-  // Hide an element
-  static hide(elem) {
-    const $el = elem;
-
-    $el.classList.remove('is-visible');
-    $el.classList.add('is-hidden');
   }
 
   // Collapse an element

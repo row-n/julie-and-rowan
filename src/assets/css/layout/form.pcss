@@ -1,30 +1,75 @@
 .form {
-  .form__field {
-    margin-bottom: 1em;
+  @media (--tablet) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  &__animate {
+    overflow: hidden;
+    position: relative;
     transition: height 350ms ease-in-out;
+    width: 100%;
+  }
 
-    &.form__field--half {
-      width: 100%;
+  &__field {
+    margin-bottom: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
 
+    &::before {
+      content: "";
+      display: table;
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    &--half {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  &__col {
+    margin-left: -.5em;
+    margin-right: -.5em;
+
+    &:first-child {
       @media (--tablet) {
-        float: left;
-        padding-right: .5em;
-        width: 50%;
+        padding-right: 1em;
       }
+    }
 
-      & ~ .form__field--half {
-        @media (--tablet) {
-          padding-left: .5em;
-          padding-right: 0;
-        }
+    &:last-child {
+      @media (--tablet) {
+        padding-left: 1em;
       }
     }
   }
 
+  &__inline {
+    align-items: center;
+    display: flex;
+
+    @media (--tablet) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__select-icon {
+    height: 1.5em;
+    position: absolute;
+    right: .5em;
+    top: 2.25em;
+    width: 1.5em;
+  }
+
   label {
     display: block;
-    font-family: var(--sub-header-font-family);
-    font-size: var(--x-small-font-size);
+    font-family: var(--body-font-family);
     margin-bottom: .25em;
   }
 
@@ -34,42 +79,34 @@
     &[type='email'],
     &[type='tel'] {
       appearance: none;
+      background-color: transparent;
       border: .125em solid var(--black-50);
       border-radius: 0;
-      color: var(--form-input-color);
+      color: var(--black-80);
       display: block;
-      font-family: var(--form-input-font-family);
+      font-family: var(--font-family-monospace);
+      font-size: var(--body-font-size);
       outline: 0;
-      padding: var(--form-input-padding);
+      padding: .5em;
+      text-align: right;
       text-decoration: none;
-      transition: border-color var(--global-duration ease);
+      transition: border-color var(--global-duration) ease;
       width: 100%;
 
       &:focus {
-        border-color: var(--form-input-border-hover);
+        border-color: var(--gold-dark);
       }
     }
 
     &[type='checkbox'],
     &[type='radio'] {
-      /* appearance: none; */
-      display: block;
-      float: left;
-      margin-right: -2em;
-      /* opacity: 0; */
-      width: 1em;
-      /* z-index: -1; */
+      margin-bottom: .25em;
+      margin-left: .5em;
+      margin-right: 1em;
 
-      & + label {
-        color: var(--form-input-color);
-        cursor: pointer;
-        display: inline-block;
-        font-size: var(--form-label-font-size);
-        font-weight: var(--form-label-font-weight);
-        padding-left: 2.4em;
-        padding-right: .75em;
-        position: relative;
-        text-decoration: none;
+      @media (--tablet) {
+        margin-left: 1em;
+        margin-right: .5em;
       }
     }
   }
@@ -77,19 +114,21 @@
   select,
   textarea {
     appearance: none;
-    border: var(--form-input-border);
+    background-color: transparent;
+    border: .125em solid var(--black-50);
     border-radius: 0;
-    color: var(--form-input-color);
+    color: var(--black-80);
     display: block;
-    font-family: var(--form-input-font-family);
+    font-family: var(--font-family-monospace);
+    font-size: var(--body-font-size);
     outline: 0;
-    padding: var(--form-input-padding);
+    padding: .5em;
     text-decoration: none;
-    transition: border-color var(--global-duration ease);
+    transition: border-color var(--global-duration) ease;
     width: 100%;
 
     &:focus {
-      border-color: var(--form-input-border-hover);
+      border-color: var(--gold-dark);
     }
   }
 }

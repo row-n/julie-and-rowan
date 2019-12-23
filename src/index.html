@@ -20,73 +20,93 @@
       </div>
 
       <div class="panel">
-        <!-- <div class="panel__item" style="background-image: url('${require('./assets/img/rsvp.jpg')}')"> -->
-        <div class="panel__item panel__item--rsvp">
+        <div class="panel__item panel__item--rsvp" style="background-image: url('${require('./assets/img/rsvp.jpg')}')">
           <h5 class="panel__number">01</h5>
           <div class="panel__content">
             <h2 class="panel__title">RSVP</h2>
             <div class="panel__description">
-              <div class="form">
-                <form action="" class="form">
+              <p>Although we love your little ones, we request that our wedding remain adults only, aside from a few close family children. We also thought you might like a day off, so book a sitter and dust off those dancing shoes!</p>
+              <form action="https://formspree.io/mqkaryoj" method="POST" class="form">
+                <div class="form__col">
                   <div class="form__field">
-                    <label for="">Will you be attending?</label>
-                    <input type="radio" name="attend_yes" value=""> Yes, would love to!
-                    <input type="radio" name="attend_no" value=""> No, can't make it unfortunately
+                    <p>Will you be attending?</p>
+                  </div>
+                  <div class="form__field form__field--half">
+                    <div class="form__inline">
+                      <input type="radio" name="attend" id="attend_yes" value="yes"> <label for="attend_yes">Yes</label>
+                    </div>
+                  </div>
+                  <div class="form__field form__field--half">
+                    <div class="form__inline">
+                      <input type="radio" name="attend" id="attend_no" value="no"> <label for="attend_no">No</label>
+                    </div>
                   </div>
                   <div class="form__field form__field--half">
                     <label for="first_name">First name:</label>
-                    <input type="text" name="first_name" value="">
+                    <input type="text" id="first_name" name="first_name" value="">
                   </div>
                   <div class="form__field form__field--half">
                     <label for="last_name">Last name:</label>
-                    <input type="text" name="last_name" value="">
+                    <input type="text" id="last_name" name="last_name" value="">
                   </div>
                   <div class="form__field">
                     <label for="email">Email address:</label>
-                    <input type="email" name="email" value="">
+                    <input type="email" id="email" name="email" value="">
                   </div>
                   <div class="form__field">
-                    <button class="button button--sm" data-toggle="collapse" data-target="#additional_guest">Add an additional guest +</button>
+                    <button class="button button--bordered button--xs" type="button" data-toggle="collapse" data-target="#additional_guest_toggle" data-replacement="Remove additional guest -">Add an additional guest +</button>
                   </div>
-                  <div class="form__field is-hidden" id="additional_guest">
-                    <label for="first_name_2">First name:</label>
-                    <input type="text" name="first_name_2" value="">
-                  </div>
+                  <span class="form__animate is-hidden" id="additional_guest_toggle">
+                    <div class="form__field form__field--half">
+                      <label for="first_name_2">First name:</label>
+                      <input type="text" id="first_name_2" name="first_name_2" value="">
+                    </div>
+                    <div class="form__field form__field--half">
+                      <label for="last_name_2">Last name:</label>
+                      <input type="text" id="last_name_2" name="last_name_2" value="">
+                    </div>
+                  </span>
+                </div>
+                <div class="form__col">
                   <div class="form__field">
-                    <label for="">Would you like bus transport?</label>
-                    <input type="radio" name="bus_yes" value="" data-toggle="collapse" data-target="#bus_transport">
-                    <label for="bus_yes">Yes</label>
-                    <input type="radio" name="bus_no" value="">
-                    <label for="bus_no">No</label>
+                    <p>Would you like bus transport?</p>
                   </div>
-                  <div class="form__field is-hidden" id="bus_transport">
+                  <div class="form__field form__field--half">
+                    <div class="form__inline">
+                      <input type="radio" name="bus" id="bus_yes" value="yes" data-toggle="open" data-target="#bus_transport_toggle">
+                      <label for="bus_yes">Yes</label>
+                    </div>
+                  </div>
+                  <div class="form__field form__field--half">
+                    <div class="form__inline">
+                      <input type="radio" name="bus" id="bus_no" value="no" data-toggle="close" data-target="#bus_transport_toggle">
+                      <label for="bus_no">No</label>
+                    </div>
+                  </div>
+                  <div class="form__field form__animate is-hidden" id="bus_transport_toggle">
                     <label for="bus_location">Would you like bus transport?</label>
                     <select name="bus_location" id="bus_location">
+                      <option value="" selected disabled hidden>-- Please select --</option>
                       <option value="papamoa">Papamoa - Papamoa Tavern</option>
                       <option value="mt_maunganui">Mt Maunganui - Bayfair</option>
                       <option value="otumoetai">Otumoetai - Otumoetai Medical Centre</option>
                       <option value="bethlehem">Bethlehem - Bethlehem Countdown</option>
                     </select>
+                    <svg class="form__select-icon"><use xlink:href="#icon-chevrondown"></use></svg>
                   </div>
                   <div class="form__field">
-                    <button class="button button--sm" data-toggle="collapse" data-target="#dietary_requirements">Add dietary requirements +</button>
-                  </div>
-                  <div class="form__field is-hidden" id="dietary_requirements">
                     <label for="dietary_requirements">Dietary requirements:</label>
-                    <textarea name="dietary_requirements"></textarea>
+                    <textarea name="dietary_requirements" id="dietary_requirements"></textarea>
                   </div>
                   <div class="form__field">
-                    <button class="button button--sm" data-toggle="collapse" data-target="#additional_info">Add any additional information +</button>
-                  </div>
-                  <div class="form__field is-hidden" id="additional_info">
                     <label for="additional_info">Additional information:</label>
-                    <textarea name="additional_info"></textarea>
+                    <textarea name="additional_info" id="additional_info"></textarea>
                   </div>
                   <div class="form__field">
                     <button type="submit" class="button">Send response</button>
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -100,7 +120,7 @@
               Ohauti,<br>
               Tauranga</h5>
               <h5>2pm Ceremony</h5>
-              <p>Bus transit is the preferred transport option, for more information please see the Getting There page.</p>
+              <p>Your presence at our wedding is gift enough. But if you would like to get us something, a gift of cash towards our honeymoon, would really make our day.</p>
             </div>
           </div>
         </div>
@@ -112,10 +132,10 @@
               <p>To reduce driveway congestion it is preferred that guests use the bus transport provided.</p>
               <p>We have organised locations around the Tauranga area, these locations will be used for guest pick up before the ceremony and drop off after the reception.</p>
               <h5>Locations</h5>
-              <p>Papamoa - Papamoa Tavern<br />
-              Mt Maunganui - Bayfair<br />
-              Otumoetai - Otumoetai Medical Centre<br />
-              Bethlehem - Bethlehem Countdown</p>
+              <p>Papamoa - <a href="https://goo.gl/maps/QbJBWaDCNuWoxJJH7" target="_blank">Papamoa Tavern</a><br />
+              Mt Maunganui - <a href="https://goo.gl/maps/czbqRBoXHRcpokud8" target="_blank">Bayfair</a><br />
+              Otumoetai - <a href="https://goo.gl/maps/y8BSAA7tt8QVuKdw5" target="_blank">Otumoetai Medical Centre</a><br />
+              Bethlehem - <a href="https://goo.gl/maps/Fk5ZNkpDSW7GqjQc9" target="_blank">Bethlehem Countdown</a></p>
             </div>
           </div>
         </div>
@@ -124,9 +144,8 @@
           <div class="panel__content">
             <h2 class="panel__title">The next day</h2>
             <div class="panel__description">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <p><em>Details to be arranged...</em></p>
             </div>
-            <span class="panel__more">more</span>
           </div>
         </div>
         <h5 class="panel__name">Julie + Rowan</h5>
