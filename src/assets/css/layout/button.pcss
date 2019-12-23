@@ -1,13 +1,14 @@
 .button {
   appearance: none;
-  background-color: transparent;
+  background-color: var(--gold-dark);
   border: .0625em solid var(--gold-dark);
   border-radius: 0;
-  color: var(--gold-dark);
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   font-family: var(--sub-header-font-family);
-  font-size: var(--large-font-size);
+  font-size: var(--body-font-size);
+  outline: none;
   padding: .5em 1em;
   text-align: center;
   text-decoration: none;
@@ -15,19 +16,33 @@
   white-space: nowrap;
 
   &:hover {
-    background-color: var(--gold-dark);
-    border-color: var(--gold-dark);
-    color: var(--white);
+    background-color: transparent;
+    color: var(--gold-dark);
   }
 
-  &--sm {
-    padding: .25em .5em;
+  &--bordered {
+    background-color: transparent;
+    color: var(--gold-dark);
+
+    &:hover {
+      background-color: var(--gold-dark);
+      color: var(--white);
+    }
+  }
+
+  &--xs {
     font-size: var(--x-small-font-size);
   }
 
-  .icon {
-    fill: var(--button-color);
-    margin-right: .5em;
-    margin-top: -.4em;
+  &--sm {
+    font-size: var(--small-font-size);
+  }
+
+  &--lg {
+    font-size: var(--large-font-size);
+  }
+
+  &--xl {
+    font-size: var(--x-large-font-size);
   }
 }
