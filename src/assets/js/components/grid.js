@@ -47,7 +47,6 @@ export default class Grid {
     // when resizing the window we need to reset
     // the grid items translation positions (if the panel is shown).
     window.addEventListener('resize', () => {
-      Site.winsize = { width: window.innerWidth, height: window.innerHeight };
       if (this.isGridHidden) {
         this.movable.forEach((item) => {
           Array.from(item.DOM.el.children).forEach((child) => {
@@ -100,16 +99,23 @@ export default class Grid {
   }
 
   toggleRevealer(action, dir) {
+    const revealerDirOffest = dir === 'up' ? '-200%' : '0%';
+    let shown = false;
+
+    if (action === 'show') {
+      shown = true;
+    }
+
     return new Promise((resolve) => {
       // change revealer color
-      if (action === 'show') {
+      if (shown) {
         this.DOM.revealer.style.backgroundColor = this.movable[this.current]
           .DOM.el.dataset.revealerColor;
       }
       // animate the revealer up or down.
-      TweenMax.to(this.DOM.revealer, action === 'show' ? 1 : 1, {
-        ease: action === 'show' ? 'Quint.easeInOut' : 'Quint.easeOut',
-        y: action === 'show' ? '-100%' : dir === 'up' ? '-200%' : '0%', // eslint-disable-line no-nested-ternary
+      TweenMax.to(this.DOM.revealer, shown ? 1 : 1, {
+        ease: shown ? 'Quint.easeInOut' : 'Quint.easeOut',
+        y: shown ? '-100%' : revealerDirOffest,
         onComplete: resolve,
       });
     });
