@@ -16,18 +16,6 @@
   --black-90: #1a1a1a;
   --black: #000;
 
-  --n-white: gray(100);
-  --n-black-10: gray(90);
-  --n-black-20: gray(80);
-  --n-black-30: gray(70);
-  --n-black-40: gray(60);
-  --n-black-50: gray(50);
-  --n-black-60: gray(40);
-  --n-black-70: gray(30);
-  --n-black-80: gray(20);
-  --n-black-90: gray(10);
-  --n-black: gray(0);
-
   --gold-dark: #dec489;
   --gold-mid: #ead297;
   --gold-light: #f6e0a4;
@@ -35,16 +23,15 @@
   /* Global */
   /* ------ */
 
-  --global-font-size: 112.5%;
+  --global-font-size: 18px;
   --global-lineheight: 1.5;
   --global-weight-normal: normal;
   --global-weight-bold: bold;
   --global-duration: .4s;
   --body-background: var(--white);
-  --body-font-colour: var(--n-black-70);
+  --body-font-colour: var(--black-70);
   --body-font-family: 'Playfair Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --body-font-size: var(--global-font-size);
-  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
   /* Base Typography */
   /* --------------- */
@@ -53,8 +40,8 @@
   --sub-header-font-family: 'Playfair Display SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --header-font-style: normal;
   --header-font-weight: var(--global-weight-normal);
-  --font-family-monospace: var(--font-family-monospace);
-  --header-color: var(--n-black-70);
+  --font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --header-color: var(--black-70);
   --header-lineheight: 1.4;
   --header-margin-bottom: .25em;
   --h1-font-size: 3.998em;
@@ -69,8 +56,8 @@
   --x-large-font-size: 125%;
   --paragraph-lineheight: 1.6;
   --paragraph-margin-bottom: 1rem;
-  --anchor-color: blue;
-  --anchor-color-hover: blue;
+  --anchor-color: var(--gold-dark);
+  --anchor-color-hover: var(--gold-mid);
   --anchor-text-decoration: underline;
   --anchor-text-decoration-hover: none;
   --hr-width: 100%;
@@ -82,81 +69,10 @@
   --list-style-position: outside;
   --list-side-margin: 1.25rem;
   --list-nested-side-margin: 1.25rem;
-
-  /* Buttons */
-  /* ------- */
-
-  --button-font-family: var(--header-font-family);
-  --button-letter-spacing: var(--header-letter-spacing);
-  --button-color: var(--white);
-  --button-background-color: blu;
-  --button-color-hover: var(--button-color);
-  --button-background-color-hover: blue;
-  --button-bordered-color-hover: blue;
-  --button-bordered-background-color: transparent;
-  --button-bordered-background-color-hover: transparent;
-  --button-border-color: blue;
-  --button-border-color-hover: blue;
-  --button-border: .125em solid var(--button-border-color);
-  --button-padding: .75em 2.5em;
-
-  /* Close */
-  /* ----- */
-
-  --close-color: var(--black-30);
-  --close-color-hover: var(--white);
-  --close-width: 4em;
-  --close-height: var(--close-width);
-
-  /* Content */
-  /* ------- */
-
-  --content-width: 75em;
-
-  /* Panel */
-  /* ----- */
-
-  --panel-background: var(--black-80);
-  --panel-padding: 4em;
-  --panel-width: var(--content-width);
-
-  /* Forms */
-  /* ----- */
-
-  --form-label-font-family: var(--header-font-family);
-  --form-label-font-size: var(--small-font-size);
-  --form-label-font-weight: var(--header-x-light-font-weight);
-  --form-input-font-family: var(--body-font-family);
-  --form-input-color: var(--black-10);
-  --form-input-background: var(--black-70);
-  --form-input-border-color: var(--black-70);
-  --form-input-border-hover: blue;
-  --form-input-border: .125em solid var(--form-input-border-color);
-  --form-input-padding: .75em 1em;
-  --form-field-spacing: 1.5em;
-
-  /* Tiles */
-  /* ----- */
-
-  --tile-background: var(--black-10);
-  --tile-color: var(--black-50);
-  --tile-title-color-hover: var(--white);
-  --tile-title-font-size: var(--global-font-size);
-  --title-tagline-color: var(--white);
-  --title-tagline-font-family: var(--header-font-family);
-  --title-tagline-font-size: var(--small-font-size);
-  --tile-caption-padding: 1.5em;
-
-  /* Z-index */
-  /* ------- */
-
-  --close-zindex: 30;
-  --panel-zindex: 20;
-  --tile-zindex: 10;
 }
 
 @custom-media --phone (max-width: 29.9375em);
 @custom-media --mobile (min-width: 30em);
 @custom-media --tablet (min-width: 48em);
 @custom-media --desktop (min-width: 62em);
-@custom-media --screen (min-width: 75em);
+@custom-media --retina (min-width: 75em);
