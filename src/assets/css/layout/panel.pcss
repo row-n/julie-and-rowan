@@ -10,12 +10,16 @@
   }
 
   &__item {
-    background-size: cover;
-    background-position: 50% 50%;
-    padding: 80vh 1.5em 1.5em;
+    padding: 2em;
     margin: 0 0 2em 0;
 
+    @media (--phone) {
+      background-image: none !important;
+    }
+
     @media (--tablet) {
+      background-size: cover;
+      background-position: 50% 50%;
       display: grid;
       position: absolute;
       top: 0;
@@ -37,27 +41,28 @@
     &--rsvp {
       @media (--tablet) {
         background-color: var(--white);
+        background-image: none !important;
       }
 
-      @media (--screen) {
+      @media (--desktop) {
         grid-template-columns: 10% 90%;
       }
     }
 
     &--venue {
-      @media (--screen) {
+      @media (--desktop) {
         grid-template-columns: 60% 40%;
       }
     }
 
     &--getting-there {
-      @media (--screen) {
+      @media (--desktop) {
         grid-template-columns: 50% 50%;
       }
     }
 
     &--the-next-day {
-      @media (--screen) {
+      @media (--desktop) {
         grid-template-columns: 65% 35%;
       }
     }
