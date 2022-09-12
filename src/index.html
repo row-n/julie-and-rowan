@@ -20,7 +20,7 @@
       </div>
 
       <div class="panel">
-        <div class="panel__item panel__item--rsvp" style="background-image: url('${require('./assets/img/rsvp.jpg')}')">
+        <div class="panel__item panel__item--rsvp" style="background-image: url('./assets/img/rsvp.jpg')">
           <h5 class="panel__number">01</h5>
           <div class="panel__content">
             <h2 class="panel__title">RSVP</h2>
@@ -33,7 +33,7 @@
                   </div>
                   <div class="form__field form__field--half">
                     <div class="form__inline">
-                      <input type="radio" name="attend" id="attend_yes" value="yes"> <label for="attend_yes">Yes</label>
+                      <input type="radio" name="attend" id="attend_yes" value="yes" required> <label for="attend_yes">Yes</label>
                     </div>
                   </div>
                   <div class="form__field form__field--half">
@@ -43,15 +43,15 @@
                   </div>
                   <div class="form__field form__field--half">
                     <label for="first_name">First name:</label>
-                    <input type="text" id="first_name" name="first_name" value="">
+                    <input type="text" id="first_name" name="first_name" value="" required>
                   </div>
                   <div class="form__field form__field--half">
                     <label for="last_name">Last name:</label>
-                    <input type="text" id="last_name" name="last_name" value="">
+                    <input type="text" id="last_name" name="last_name" value="" required>
                   </div>
                   <div class="form__field">
                     <label for="email">Email address:</label>
-                    <input type="email" id="email" name="email" value="">
+                    <input type="email" id="email" name="email" value="" required>
                   </div>
                   <div class="form__field">
                     <button class="button button--bordered button--xs" type="button" data-toggle="collapse" data-target="#additional_guest_toggle" data-replacement="Remove additional guest -">Add an additional guest +</button>
@@ -73,7 +73,7 @@
                   </div>
                   <div class="form__field form__field--half">
                     <div class="form__inline">
-                      <input type="radio" name="bus" id="bus_yes" value="yes" data-toggle="open" data-target="#bus_transport_toggle">
+                      <input type="radio" name="bus" id="bus_yes" value="yes" required data-toggle="open" data-target="#bus_transport_toggle">
                       <label for="bus_yes">Yes</label>
                     </div>
                   </div>
@@ -110,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="panel__item panel__item--venue" style="background-image: url('${require('./assets/img/venue.jpg')}')">
+        <div class="panel__item panel__item--venue" style="background-image: url('./assets/img/venue.jpg')">
           <h5 class="panel__number">02</h5>
           <div class="panel__content">
             <h2 class="panel__title">Venue</h2>
@@ -120,11 +120,12 @@
               Ohauti,<br>
               Tauranga</h5>
               <h5>2pm Ceremony</h5>
+              <p>Semi-formal / cocktail wedding attire (ties optional)</p>
               <p>Your presence at our wedding is gift enough. But if you would like to get us something, a gift of cash towards our honeymoon, would really make our day.</p>
             </div>
           </div>
         </div>
-        <div class="panel__item panel__item--getting-there" style="background-image: url('${require('./assets/img/transport.jpg')}')">
+        <div class="panel__item panel__item--getting-there" style="background-image: url('./assets/img/transport.jpg')">
           <h5 class="panel__number">03</h5>
           <div class="panel__content">
             <h2 class="panel__title">Getting there</h2>
@@ -132,19 +133,25 @@
               <p>To reduce driveway congestion it is preferred that guests use the bus transport provided.</p>
               <p>We have organised locations around the Tauranga area, these locations will be used for guest pick up before the ceremony and drop off after the reception.</p>
               <h5>Locations</h5>
-              <p>Papamoa - <a href="https://goo.gl/maps/QbJBWaDCNuWoxJJH7" target="_blank">Papamoa Tavern</a><br />
-              Mt Maunganui - <a href="https://goo.gl/maps/czbqRBoXHRcpokud8" target="_blank">Bayfair</a><br />
-              Otumoetai - <a href="https://goo.gl/maps/y8BSAA7tt8QVuKdw5" target="_blank">Otumoetai Medical Centre</a><br />
-              Bethlehem - <a href="https://goo.gl/maps/Fk5ZNkpDSW7GqjQc9" target="_blank">Bethlehem Countdown</a></p>
+              <p><strong>Route 1</strong></p>
+              <p>Otumoetai (1pm) - <a href="https://goo.gl/maps/CR2XhRGGuFSsfc6b8" target="_blank">Ngatai Rd outside Otumoetai Medical Centre</a><br />
+              Bethlehem (1:15pm) - <a href="https://goo.gl/maps/cYuJ9PjfkQEmRhcT8" target="_blank">State Highway 2 outside Bethlehem Hall</a></p>
+              <p><strong>Route 2</strong></p>
+              <p>Papamoa (1pm) - <a href="https://goo.gl/maps/Sd29N1LCjF7WmLFX9" target="_blank">Domain Rd outside Thirsty Liquor</a><br />
+              Mt Maunganui (1:15pm) - <a href="https://goo.gl/maps/8CkSHhojBJL37zUJ7" target="_blank">Farm St outside Farmers</a></p>
             </div>
           </div>
         </div>
-        <div class="panel__item panel__item--the-next-day" style="background-image: url('${require('./assets/img/next-day.jpg')}')">
+        <div class="panel__item panel__item--the-next-day" style="background-image: url('./assets/img/next-day.jpg')">
           <h5 class="panel__number">04</h5>
           <div class="panel__content">
             <h2 class="panel__title">The next day</h2>
             <div class="panel__description">
-              <p><em>Details to be arranged...</em></p>
+              <h4>Fergusson Park</h4>
+              <h5>11:30am</h5>
+              <p>To continue the celebrations we will be heading to the sports hall at Fergusson Park in Matua from 11:30am for a relaxed lunch.</p>
+              <p>Families welcome! There's a huge park and playground to allow the little ones to stretch their legs.</p>
+              <p>Casual BBQ provided.</p>
             </div>
           </div>
         </div>
@@ -159,7 +166,7 @@
           <span class="thumb__number"><span>01</span></span>
           <div class="thumb__imgwrap">
             <img class="thumb__img" src="./assets/img/rsvp-thumb.jpg" alt="RSVP" />
-            <div class="thumb__bg" style="background-image: url('${require('./assets/img/rsvp-thumb.jpg')}')"></div>
+            <div class="thumb__bg" style="background-image: url('./assets/img/rsvp-thumb.jpg')"></div>
           </div>
         </div>
         <div class="grid__item thumb" data-revealer-color="#ead297">
@@ -167,7 +174,7 @@
           <span class="thumb__number"><span>02</span></span>
           <div class="thumb__imgwrap">
             <img class="thumb__img" src="./assets/img/venue-thumb.jpg" alt="Venue" />
-            <div class="thumb__bg" style="background-image: url('${require('./assets/img/venue-thumb.jpg')}')"></div>
+            <div class="thumb__bg" style="background-image: url('./assets/img/venue-thumb.jpg')"></div>
           </div>
         </div>
         <div class="grid__item thumb" data-revealer-color="#ead297">
@@ -175,7 +182,7 @@
           <span class="thumb__number"><span>03</span></span>
           <div class="thumb__imgwrap">
             <img class="thumb__img" src="./assets/img/transport-thumb.jpg" alt="Transport" />
-            <div class="thumb__bg" style="background-image: url('${require('./assets/img/transport-thumb.jpg')}')"></div>
+            <div class="thumb__bg" style="background-image: url('./assets/img/transport-thumb.jpg')"></div>
           </div>
         </div>
         <div class="grid__item thumb" data-revealer-color="#ead297">
@@ -183,7 +190,7 @@
           <span class="thumb__number"><span>04</span></span>
           <div class="thumb__imgwrap">
             <img class="thumb__img" src="./assets/img/next-day-thumb.jpg" alt="The next day" />
-            <div class="thumb__bg" style="background-image: url('${require('./assets/img/next-day-thumb.jpg')}')"></div>
+            <div class="thumb__bg" style="background-image: url('./assets/img/next-day-thumb-8.jpg')"></div>
           </div>
         </div>
         <div class="grid__item thumb thumb--more">
