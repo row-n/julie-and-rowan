@@ -88,10 +88,13 @@
       font-size: var(--body-font-size);
       outline: 0;
       padding: .5em;
-      text-align: right;
       text-decoration: none;
       transition: border-color var(--global-duration) ease;
       width: 100%;
+
+      @media (--tablet) {
+        text-align: right;
+      }
 
       &:focus {
         border-color: var(--gold-dark);
@@ -108,6 +111,55 @@
         margin-left: 1em;
         margin-right: .5em;
       }
+    }
+
+    &[type="radio"]:checked,
+    &[type="radio"]:not(:checked) {
+      left: -9999em;
+      position: absolute;
+    }
+
+    &[type="radio"]:checked + label,
+    &[type="radio"]:not(:checked) + label
+    {
+      padding-left: 2em;
+      position: relative;
+    }
+
+    &[type="radio"]:checked + label:before,
+    &[type="radio"]:not(:checked) + label:before {
+      background-color: var(--white);
+      border: .125em solid var(--black-50);
+      border-radius: 100%;
+      content: '';
+      height: 1.25em;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 1.25em;
+    }
+
+    &[type="radio"]:checked + label:after,
+    &[type="radio"]:not(:checked) + label:after {
+      background-color: var(--gold-dark);
+      border-radius: 100%;
+      content: '';
+      height: .75em;
+      left: .25em;
+      position: absolute;
+      top: .25em;
+      transition: all 0.2s ease;
+      width: .75em;
+    }
+
+    &[type="radio"]:not(:checked) + label:after {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    &[type="radio"]:checked + label:after {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
